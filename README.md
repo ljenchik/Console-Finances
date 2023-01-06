@@ -17,6 +17,6 @@ A console application for analyzing the financial records of a company. The data
 ###
 
 <p float="center">
-<img src="console-finance.png" alt="console output" width="200"/>
+<img src="./console-finance.png" alt="console output" width="200"/>
 </p>
 
