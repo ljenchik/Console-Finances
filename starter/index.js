@@ -108,7 +108,28 @@ for (var i = 0; i < changes.length; i++) {
   sumOfChanges += changes[i];
 }
 
+// Average chamge
+let averageChange = (sumOfChanges/changes.length).toFixed(2);
+
+// Greatest increase in profits
+let greatestIncrease = changes.reduce((a, b) => Math.max(a, b));
+
+// Month which corresponds to the greatest increase in profits
+let monthGreatestIncrease = changes.indexOf(greatestIncrease) + 1;
+
+// // Greatest decrese in profits
+let greatestDecrease = changes.reduce((a, b) => Math.min(a, b));
+
+// Month which corresponds to the greatest decrease in profits
+let monthGreatestDecrease = changes.indexOf(greatestDecrease) + 1;
+
+
+// Result to display in console
 console.log("Financial Analysis");
 console.log("-------------------------------");
 console.log("Total Months:", totalNumberOfMonths);
 console.log("Total $:", total);
+console.log("Average Change $:", averageChange);
+console.log("Greatest Increase in Profits:", finances[monthGreatestIncrease][0], "($" + greatestIncrease + ")");
+console.log("Greatest Decrease in Profits:", finances[monthGreatestDecrease][0], "($" + greatestDecrease + ")");
+
