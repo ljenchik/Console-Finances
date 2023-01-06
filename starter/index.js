@@ -86,3 +86,39 @@ var finances = [
 ['Jan-2017', 138230],
 ['Feb-2017', 671099]
 ];
+
+let totalNumberOfMonths = finances.length;
+let total = 0;
+
+for (let i = 0; i < finances.length; i++) {
+    total += finances[i][1]
+}
+
+let changes = [];
+
+for (let i = 0; i < finances.length - 1; i++) {
+    changes.push(finances[i + 1][1] - finances[i][1])
+}
+
+let sumOfChanges = 0;
+for( var i = 0; i < changes.length; i++ ){
+    sumOfChanges +=  changes[i]; 
+}
+
+let averageChange = (sumOfChanges/changes.length).toFixed(2);
+let greatestIncrease = changes.reduce((a, b) => Math.max(a, b));
+let monthGreatestIncrease = changes.indexOf(greatestIncrease);
+let greatestDecrease = changes.reduce((a, b) => Math.min(a, b));
+let monthGreatestDecrease = changes.indexOf(greatestDecrease);
+
+console.log("Financial Analysis");
+console.log("-------------------------------");
+console.log("Total Months:", totalNumberOfMonths);
+console.log("Total $:", total);
+console.log("Average Change $:", averageChange);
+console.log("Greatest Increase in Profits:", finances[monthGreatestIncrease + 1][0], "($" + greatestIncrease + ")");
+console.log("Greatest Decrease in Profits:", finances[monthGreatestDecrease + 1][0], "($" + greatestDecrease + ")");
+
+
+
+
