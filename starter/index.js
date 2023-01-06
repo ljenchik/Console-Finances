@@ -117,7 +117,7 @@ let greatestIncrease = changes.reduce((a, b) => Math.max(a, b));
 // Month which corresponds to the greatest increase in profits
 let monthGreatestIncrease = changes.indexOf(greatestIncrease) + 1;
 
-// // Greatest decrese in profits
+// Greatest decrease in profits
 let greatestDecrease = changes.reduce((a, b) => Math.min(a, b));
 
 // Month which corresponds to the greatest decrease in profits
